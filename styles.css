@@ -1,0 +1,447 @@
+/* RESET GENERAL
+  * selecciona TODOS los elementos.
+  Esto se usa para:
+  - Quitar márgenes y paddings por defecto del navegador
+  - Hacer que el tamaño incluya padding y borde
+  - Definir una tipografía base para todo el sitio */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Evita problemas de tamaños */
+  font-family: 'Poppins', sans-serif; /* Fuente base del sitio */
+}
+
+/* CONFIGURACIÓN GENERAL, estilos generales del cuerpo de la página */
+body {
+  line-height: 1.6; /* Espaciado entre líneas para mejor lectura */
+  color: #333; 
+  background: rgb(214, 210, 196);    /* Color del texto por defecto */
+}
+
+/* HERO (SECCIÓN PRINCIPAL)
+  Contenedor principal del hero
+  Aquí SOLO se controla:
+  - tamaño
+  - colores
+  - alineación
+  NO tamaños de texto */
+.hero {
+  min-height: 100vh;              /* Ocupa toda la pantalla */
+  background: rgb(150, 113, 38);  /* Color del fondo*/
+  color: rgb(62, 72, 39);         /* Color del texto dentro del hero */
+  display: flex;                 /* Activamos Flexbox */
+  flex-direction: column;        /* Elementos uno debajo de otro */
+  justify-content: center;       /* Centrado vertical */
+  align-items: center;           /* Centrado horizontal */
+  text-align: center;            /* Texto centrado */
+  padding: 20px;                 /* Espacio interno */
+}
+
+
+/* NOMBRE DEL RESTAURANTE
+  Estilo SOLO para el <h1> dentro del hero
+  Aquí va la tipografía especial y el tamaño grande */
+.hero h1 { 
+  font-family: 'Montserrat', sans-serif; /* Fuente del nombre */
+  font-size: 4.5rem;                       /* Texto principal grande */
+  font-weight: 700;                      /* Negrita */
+  letter-spacing: 2px;                   /* Espaciado entre letras */
+  margin-bottom: 10px;                   /* Separación del slogan */
+}
+
+/*Logo del restaurante*/
+.logo {
+  width: 250px;        /* Tamaño del logo */
+  margin-bottom: 20px; /* Espacio entre logo y nombre */
+}
+
+/* SLOGAN DEL RESTAURANTE
+  Estilo del texto secundario (slogan)
+  Debe ser más pequeño que el nombre */
+.hero p {
+  font-size: 2rem;
+  margin-bottom: 20px; /* Espacio antes del botón */
+}
+
+/* BOTONES
+  Estilo base para todos los botones */
+.btn{
+  background: white;                   /* Fondo blanco */
+  color: rgb(150, 113, 38);             /* Texto café */
+  padding: 12px 25px;                  /* Tamaño del botón */
+  border-radius: 30px;                 /* Bordes redondeados */
+  text-decoration: none;               /* Quita subrayado */
+  font-weight: 600;
+}
+
+/*Animación del botón*/
+.btn:hover {
+  background: rgb(62, 72, 39);
+  color: white;
+  transform: scale(1.05); /* pequeño zoom */
+}
+
+/* SECCIONES GENERALES
+  Contenedor reutilizable para secciones */
+.section {
+  padding: 60px 20px;  /* Espacio interno */
+  max-width: 900px;    /* Ancho máximo */
+  margin: auto;        /* Centrado horizontal */
+}
+
+
+/* Títulos de cada sección */
+.section h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+
+/* SECCIÓN CLARA 
+  Secciones con fondo claro */
+.light {
+  background: rgb(214, 210, 196);
+}
+
+
+/*  MENÚ DEL RESTAURANTE
+  Cada platillo del menú */
+.menu-item {
+  display: flex;                  /* Nombre y precio en línea */
+  justify-content: space-between; /* Separación nombre/precio */
+  margin-bottom: 15px;
+  border-bottom: 1px dashed #ccc; /* Línea divisoria */
+  padding-bottom: 5px;
+  text-decoration: none; /* Quita subrayado */
+  color: inherit;        /* Mantiene colores normales */
+}
+
+.menu-item:hover {
+  background: #f5f5f5;
+  cursor: pointer;
+  transform: scale(1.01);
+  transition: 0.2s;
+}
+
+
+/* BOTÓN WHATSAPP
+  Botón especial para WhatsApp */
+.whatsapp {
+  display: inline-block;
+  background: #25d366; /* Verde WhatsApp */
+  color: white;
+}
+
+/*Animación del botón de whatsapp*/
+.whatsapp:hover {
+  background: #1ebe5d;
+}
+
+.mapa {
+  padding: 60px 20px;
+  background-color: #f5f5f5; /* cambia el fondo si quieres */
+  text-align: center;
+}
+
+.mapa h2 {
+  margin-bottom: 20px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.mapa iframe {
+  width: 100%;
+  max-width: 900px;
+  height: 400px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+/* RESPONSIVE (CELULARES)
+  Estos estilos SOLO se aplican
+  cuando la pantalla es menor a 600px */
+@media (max-width: 600px) {
+
+  /* Ajuste del nombre en celular */
+  .hero h1 {
+    font-size: 2.8rem;
+  }
+
+  /* Ajuste del slogan en celular */
+  .hero p {
+    font-size: 1.1rem;
+  }
+
+  /* Ajuste del logo en celular */
+  .logo {
+    width: 90px;
+  }
+  .hero-title {
+    flex-direction: column;
+  }
+
+  .mapa {
+    padding: 40px 15px;
+  }
+
+  .mapa iframe {
+    height: 280px;
+    border-radius: 12px;
+  }
+
+  .mapa h2 {
+    font-size: 1.4rem;
+  }
+}
+
+/* Footer */
+.footer {
+  background: rgb(62, 72, 39); /* verde oscuro */
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.footer-content {
+  max-width: 900px;
+  margin: auto;
+}
+
+.footer h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+}
+
+.footer p {
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+}
+
+.footer-whatsapp {
+  display: inline-block;
+  margin: 15px 0;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.footer-whatsapp:hover {
+  text-decoration: underline;
+}
+
+.footer-copy {
+  margin-top: 25px;
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+
+/* Categorías del menú */
+.menu-category {
+  margin-top: 40px;
+  margin-bottom: 15px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.6rem;
+  color: rgb(150, 113, 38);
+  border-left: 5px solid rgb(150, 113, 38);
+  padding-left: 10px;
+}
+
+/* Sección compacta del menú */
+.menu-section {
+  padding: 20px;
+  max-width: 900px;
+  margin: auto;
+}
+.menu-category:first-child {
+  margin-top: 10px;
+}
+
+/* Tabs */
+.menu-tabs {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  margin-bottom: 20px;
+}
+
+.tab {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  background: #eee;
+  font-weight: 600;
+}
+
+.tab.active {
+  background: rgb(150, 113, 38);
+  color: white;
+}
+
+/* Contenido */
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+/* Logo flotante*/
+.floating-logo {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+
+  width: 65px;
+  height: 65px;
+
+  background: white;
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+
+  z-index: 999;
+  transition: transform 0.2s ease;
+}
+
+.floating-logo img {
+  width: 70%;
+  height: auto;
+}
+
+.floating-logo:hover {
+  transform: scale(1.1);
+}
+
+.floating-logo {
+  animation: float 2s infinite ease-in-out;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+  100% { transform: translateY(0); }
+}
+
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+
+  width: 65px;
+  height: 65px;
+
+  background: #ffffff;
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+
+  z-index: 999;
+
+  transition: opacity 0.3s ease, transform 0.3s ease;
+
+  /* animación flotante SIN usar transform */
+  animation: floatY 2s infinite ease-in-out;
+}
+
+.whatsapp-float img {
+  width: 100%;
+}
+
+/* estado oculto */
+.floating-logo.hidden,
+.whatsapp-float.hidden {
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+}
+
+/* animación flotante usando margin en vez de transform */
+@keyframes floatY {
+  0% { margin-bottom: 0; }
+  50% { margin-bottom: 5px; }
+  100% { margin-bottom: 0; }
+}
+
+/* Página del platillo */
+
+.platillo-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+
+  background: linear-gradient(
+  160deg,
+  rgb(62,72,39),
+  rgb(150,113,38),
+  rgb(214,210,196)
+);
+}
+
+
+.platillo-card {
+  background: white;
+  max-width: 450px;
+  width: 100%;
+  border-radius: 18px;
+  padding: 25px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.platillo-card h1 {
+  margin-bottom: 15px;
+}
+
+.platillo-card img {
+  width: 100%;
+  border-radius: 12px;
+  margin: 15px 0;
+}
+
+.descripcion {
+  margin: 15px 0;
+  line-height: 1.6;
+  color: #555;
+}
+
+.precio {
+  font-size: 26px;
+  font-weight: bold;
+  margin: 15px 0;
+  color: rgb(150, 113, 38);
+}
+
+.volver {
+  display: inline-block;
+  margin-bottom: 15px;
+}
+
+.platillo-card:hover {
+  transform: translateY(-3px);
+  transition: 0.3s;
+}
+
+.peso {
+  display: block;
+  margin-top: 6px;
+
+  font-size: 0.9rem;
+  color: #666;
+
+  font-style: italic;
+}
+
+
